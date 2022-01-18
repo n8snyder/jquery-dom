@@ -60,15 +60,15 @@
   <div class="row mb-5">
     <div class="col-sm-4">
       Red
-      <input class="form-control" type="number" min="0" max="255" value="255">
+      <input id="red-input" class="form-control" type="number" min="0" max="255" value="255">
     </div>
     <div class="col-sm-4">
       Blue
-      <input class="form-control" type="number" min="0" max="255" value="255">
+      <input id="blue-input" class="form-control" type="number" min="0" max="255" value="255">
     </div>
     <div class="col-sm-4">
       Green
-      <input class="form-control" type="number" min="0" max="255" value="255">
+      <input id="green-input" class="form-control" type="number" min="0" max="255" value="255">
     </div>
   </div>
 </div>
@@ -80,7 +80,15 @@
   $("article p").last().remove();
   $("title").css("font-size", `${Math.floor(Math.random()*100)}px`);
   $("ol").append($("<li>Hey look, there's a kitten!</li>"));
-  $("aside").children().remove().append($("<p>Sorry for the silly list.</p>"));
+  $("aside").empty().append($("<p>Sorry for the silly list.</p>"));
+  $(".form-control").on("change", function() {
+    const red = $("#red-input").val();
+    const blue = $("#blue-input").val();
+    const green = $("#green-input").val();
+    
+    $("body").css("background-color", `rgb(${red},${green},${blue})`);
+  })
+  
 </script>
 </body>
 
