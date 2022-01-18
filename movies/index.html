@@ -7,12 +7,12 @@
 <body>
     <form>
         Title
-        <input id="title-input"><br>
+        <input id="title-input" minlength="2"><br>
         Rating
-        <input id="rating-input"><br>
+        <input id="rating-input" type="number" min="0" max="10"><br>
         <button id="submit-movie-rating" type="submit">Submit</button>
     </form>
-    <div id="movie-list"></div>
+    <ul id="movie-list"></ul>
 
 <script src="https://unpkg.com/jquery"></script>
 <script src="movies.js"></script>
