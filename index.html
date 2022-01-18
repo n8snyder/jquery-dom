@@ -87,7 +87,11 @@
     const green = $("#green-input").val();
     
     $("body").css("background-color", `rgb(${red},${green},${blue})`);
-  })
+  });
+
+  $("img").on("click", function(evt) {
+    evt.target.remove();
+  });
   
 </script>
 </body>
